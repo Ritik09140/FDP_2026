@@ -1,0 +1,103 @@
+:root{
+  --bg:#020617;
+  --card:#020617ee;
+  --neon:#38bdf8;
+  --green:#22c55e;
+  --text:#e5e7eb;
+  --muted:#94a3b8;
+  --error:#ff4d4d;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",system-ui,sans-serif;}
+
+body{
+  background:radial-gradient(circle at top,#020617,#000);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.bg{
+  position:fixed; inset:0; z-index:-1; opacity:.08;
+  font-family:monospace; color:var(--green);
+  animation:scroll 28s linear infinite;
+}
+
+@keyframes scroll{
+  from{transform:translateY(0)}
+  to{transform:translateY(-100%)}
+}
+
+.splash{
+  position:fixed; inset:0; z-index:999;
+  display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,#020617,#0f172a,#020617);
+  animation:hideSplash 4.8s forwards;
+}
+
+.typing{
+  font-size:28px; color:var(--neon);
+  white-space:nowrap; overflow:hidden; width:0;
+  border-right:3px solid var(--neon);
+  animation:typing 3.2s steps(48,end) forwards;
+}
+
+@keyframes typing{to{width:52ch}}
+@keyframes hideSplash{100%{opacity:0;visibility:hidden}}
+
+.app{max-width:1200px;margin:auto;padding:28px}
+
+header{text-align:center;margin-bottom:36px}
+
+nav{display:flex;justify-content:center;gap:22px}
+
+.section{margin-top:56px}
+
+.card{
+  background:var(--card);
+  border-left:5px solid var(--green);
+  border-radius:16px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+button{
+  padding:10px 26px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(135deg,var(--green),var(--neon));
+  cursor:pointer;
+}
+
+pre{
+  background:#000;
+  color:var(--green);
+  padding:14px;
+  border-radius:10px;
+}
+
+#detail{display:none}
+
+.detail-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+textarea{
+  width:100%;
+  height:240px;
+  background:#000;
+  color:var(--green);
+}
+
+.contact{
+  max-width:620px;
+  margin:auto;
+  text-align:center;
+  border:2px solid var(--neon);
+  border-radius:20px;
+  padding:28px;
+}
+
+footer{text-align:center;margin:54px 0 10px}
